@@ -3,10 +3,11 @@ from torch import nn
 from .layer_factory import get_basic_layer, parse_expr
 import torch.utils.model_zoo as model_zoo
 import yaml
+import os.path
 
 
 class BNInception(nn.Module):
-    def __init__(self, model_path='model_zoo/bninception/bn_inception.yaml', num_classes=101,
+    def __init__(self, model_path=os.path.join(os.path.dirname(__file__), 'bn_inception.yaml'), num_classes=101,
                        weight_url='https://yjxiong.blob.core.windows.net/models/bn_inception-9f5701afb96c8044.pth'):
         super(BNInception, self).__init__()
 
